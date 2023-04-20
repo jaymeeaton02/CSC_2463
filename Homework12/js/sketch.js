@@ -102,7 +102,6 @@ function draw()
   rect(0, 450, 50, 50);
 }
 
-
 async function serialRead() 
 {
  while (true) 
@@ -116,7 +115,6 @@ async function serialRead()
    sensorData = JSON.parse(value);
  }
 }
-
 
 async function connect() 
 {
@@ -162,7 +160,6 @@ function joystickDragged()
     sound1.start();
   }
 }
-
 
 function joystickPressed()
 {
