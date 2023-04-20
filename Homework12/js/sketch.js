@@ -29,6 +29,22 @@ function setup()
    sliderLED.position(250, 600);
    sliderLED.style("width", "200px");
  }
+ 
+ const notes = ["C4", "E3", "G4", "F4", "A4", "C4", "G4", "A3", "D4", "G4", "B3", "F4"];
+ const durations = [0.1, 0.1, 0.1, 0.4, 0.4, 0.4, 0.7, 0.7, 0.7, 1, 1, 1];
+
+ const synth = new Tone.Synth().toDestination();
+ const musicPart = new Tone.Sequence((time, noteIndex) => 
+ {
+   synth.triggerAttackRelease(notes[noteIndex], durations[noteIndex], time);
+ },
+ [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+ "4n"
+ );
+
+ Tone.Transport.start();
+ musicPart.loop = true;
+ musicPart.start(0);
 }
 
 function draw() 
