@@ -26,7 +26,7 @@ function setup()
    button.mousePressed(connect);
 
    sliderLED = createSlider(0, 255, 0);
-   sliderLED.position(250, 600);
+   sliderLED.position(190, 600);
    sliderLED.style("width", "200px");
  }
  
